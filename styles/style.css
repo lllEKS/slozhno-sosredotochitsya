@@ -282,9 +282,6 @@ a .header__theme-menu-button:focus,
 
   .header-text {
     align-self: start;
-  }
-
-  .header-text {
     margin-block-start: 0;
   }
 
