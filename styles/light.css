@@ -3,10 +3,32 @@
   Здесь окажутся стили, которые нужно переопределить принудительно,
   переключая тему
 */
+@media (prefers-color-scheme: light) {
+  :root {
+    --background-color: #FFF1F7;
+    --accent-color: #353430;
+    --main-text: #FF8DCB;
+    --second-text: #353430;
+    --title-color: #FFC2E6;
+    --title-text: #353430;
+    --hover-border-color: rgba(255, 0, 112, 0.4);
+    --background-image: url("/images/cover-image-light.png");
+    --rec-decor-visibility: hidden;
+  }
+}
 
 .page.theme_light {
   /* сохраните этот селектор в приведённом виде.
     Так стили написанные ниже будут иметь больший вес,
     чем стили в медиазапросе предпочтений пользователя
   */
+  --background-color: #FFF1F7;
+  --accent-color: #353430;
+  --main-text: #FF8DCB;
+  --second-text: #353430;
+  --title-color: #FFC2E6;
+  --title-text: #353430;
+  --hover-border-color: rgba(255, 0, 112, 0.4);
+  --background-image: url("/images/cover-image-light.png");
+  --rec-decor-visibility: hidden;
 }

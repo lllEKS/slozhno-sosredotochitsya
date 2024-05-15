@@ -2,4 +2,414 @@
 
 .page {
   /* сохраните в разметке и стилях класс page. На его основе работает скрипт. */
+  padding: 10px;
+  color: var(--main-text);
+  background-color: var(--background-color, #000028);
+  background-image: var(
+    --background-image,
+    url("/images/cover-image-dark.png")
+  );
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
+  background-attachment: fixed;
+  font-family: var(--main-font, "IBM Plex Mono"), sans-serif;
+}
+
+/* НАЧАЛО - header */
+.header {
+  block-size: max(100vb, 668px);
+  margin-block-end: 30px;
+}
+
+.decorated-zone::before,
+.decorated-zone::after {
+  content: "";
+  position: absolute;
+  block-size: 25px;
+  inline-size: 25px;
+}
+
+.decorated-zone::before {
+  border-inline-end: 1px solid var(--main-text, #ff0070);
+  border-block-start: 1px solid var(--main-text, #ff0070);
+  inset-inline-end: 10px;
+  inset-block-start: 10px;
+}
+
+.decorated-zone::after {
+  border-block-end: 1px solid var(--main-text, #ff0070);
+  border-inline-start: 1px solid var(--main-text, #ff0070);
+  inset-block-end: 10px;
+  inset-inline-start: 10px;
+}
+
+/* НАЧАЛО - Элемент REC */
+.header-rec {
+  position: absolute;
+  visibility: var(--rec-decor-visibility, visible);
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  text-transform: uppercase;
+  inset-inline-end: 20px;
+  inset-block-start: 11px;
+}
+
+.header-rec::before {
+  content: "rec";
+  color: var(--main-text, #ff0070);
+  font-size: 18px;
+  line-height: 25px;
+}
+
+.header-rec::after {
+  content: "";
+  display: inline-block;
+  inline-size: 10px;
+  block-size: 10px;
+  border-radius: 50%;
+  box-shadow: 0 0 4px 2px var(--main-text, #ff0070);
+  background-color: var(--main-text, #ff0070);
+}
+/* КОНЕЦ - Элемент REC */
+
+.header__theme-menu {
+  display: grid;
+}
+
+.header__theme-menu {
+  grid-template-rows: repeat(3, auto);
+}
+
+/* Хидер кнопки */
+.header__theme-menu-list {
+  display: grid;
+  justify-self: end;
+  gap: 16px;
+  padding-block-start: 66px;
+  padding-block-end: 71px;
+  padding-inline-end: 7px;
+}
+
+.header__theme-menu-button {
+  border: none;
+  font-size: 18px;
+  font-weight: 400;
+  line-height: 18px;
+  text-align: center;
+  text-transform: lowercase;
+  background-color: transparent;
+  cursor: pointer;
+}
+
+.header__theme-menu-button_active {
+  outline: 1px solid var(--main-text, #ff0070);
+  pointer-events: none;
+}
+
+.header-title {
+  font-family: var(--main-font, "IBM Plex Mono"), sans-serif;
+  font-size: clamp(7.25rem, 5.58rem + 4vw, 7.5rem);
+  font-weight: 700;
+  line-height: 95.7px;
+  text-align: left;
+  color: var(--title-color, #db00ff);
+  text-shadow: 4px 4px 0 var(--main-text);
+}
+
+.title-decor {
+  font-family: var(--main-font, "IBM Plex Mono"), sans-serif;
+  font-size: clamp(1.125rem, 1.125rem + 0vw, 1.125rem);
+  font-weight: 700;
+  line-height: 23.4px;
+  text-align: left;
+  color: var(--accent-color, #000028);
+  background-color: var(--main-text, #ff0070);
+}
+
+.header-text {
+  justify-self: end;
+  margin-block-start: 55px;
+  max-inline-size: 375px;
+}
+/* КОНЕЦ - header */
+
+.main {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  width: 100%;
+}
+
+.section {
+  position: relative;
+}
+
+.main__concentration-content-section,
+.main__advice-content-section,
+.pictures-content-section {
+  margin-block-start: 30px;
+}
+
+.subtitle {
+  margin-block-end: 10px;
+}
+
+h2 {
+  font-family: var(--main-font, "IBM Plex Mono");
+  font-size: 18px;
+  font-weight: 700;
+  line-height: 23.4px;
+  text-align: left;
+  color: var(--title-text, #ff0070);
+}
+
+h3 {
+  margin-block-start: 20px;
+  margin-block-end: 10px;
+}
+
+h4 {
+  margin-block-start: 20px;
+  margin-block-end: 10px;
+}
+
+p {
+  font-family: var(--main-font, "IBM Plex Mono");
+  font-size: 18px;
+  font-weight: 400;
+  line-height: 23.4px;
+  text-align: left;
+  color: var(--second-text, #f1b2ce);
+}
+
+.pictures-list {
+  margin-block-start: 10px;
+  margin-block-end: 40px;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.picture-list__img {
+  object-fit: cover;
+  object-position: center;
+  inline-size: 100%;
+  block-size: 100%;
+}
+
+.footer {
+  display: grid;
+  grid-template-rows: auto 1fr auto;
+  padding-block-end: 30px;
+  block-size: max(100vb, 668px);
+}
+
+.footer::before {
+  content: "";
+  display: block;
+  justify-self: end;
+  border-inline-end: 1px solid var(--main-text);
+  border-block-start: 1px solid var(--main-text);
+  block-size: 25px;
+  inline-size: 25px;
+  inset-inline-end: 0px;
+  inset-block-start: var(--general-padding, 10px);
+  margin-block-start: -7px;
+}
+
+.footer::after {
+  content: "";
+  display: block;
+  border-inline-start: 1px solid var(--main-text);
+  border-block-end: 1px solid var(--main-text);
+  block-size: 25px;
+  inline-size: 25px;
+  inset-inline-start: 0px;
+  inset-block-end: var(--main-padding, 10px);
+}
+
+.decorations {
+  justify-self: center;
+  align-self: center;
+  font-family: var(--main-font), sans-serif;
+  font-size: clamp(7.25rem, 5.58rem + 4vw, 7.5rem);
+  font-weight: 700;
+  line-height: 95.7px;
+  color: var(--title-color, #db00ff);
+  text-shadow: 2px 2px 0 var(--main-text);
+}
+
+/* НАЧАЛО - Стили hover, focus для кнопок и ссылок */
+.header__theme-menu-item:hover {
+  outline: 1px solid var(--hover-border-color);
+}
+
+a .header__theme-menu-button:focus,
+:focus-visible {
+  outline: none;
+}
+
+.header__theme-menu-button:focus-visible {
+  border-bottom: 1px solid var(--main-text);
+}
+
+.link {
+  text-shadow: 2px 2px 0 var(--main-text, #ff0070);
+  text-decoration: none;
+}
+
+.link:hover {
+  border-bottom: 1px solid var(--second-text, #f1b2ce);
+}
+
+.link:focus-visible {
+  outline: 1px solid var(--second-text, #f1b2ce);
+}
+/* КОНЕЦ - Стили hover, focus для кнопок и ссылок */
+
+@media (width >= 768px) {
+  .page {
+    padding: 20px;
+  }
+
+  .header__theme-menu {
+    display: grid;
+    height: 100vh;
+  }
+
+  .header__theme-menu-list {
+    align-self: center;
+    padding-block-start: 80px;
+  }
+
+  .header-text {
+    align-self: start;
+  }
+
+  .header-text {
+    margin-block-start: 0;
+  }
+
+  .decorated-zone::before {
+    inset-inline-end: 20px;
+    inset-block-start: 20px;
+  }
+
+  .decorated-zone::after {
+    inset-block-end: 20px;
+    inset-inline-start: 20px;
+  }
+
+  .header-rec {
+    inset-inline-end: 30px;
+    inset-block-start: 21px;
+  }
+
+  .main {
+    display: grid;
+    row-gap: 50px;
+    padding-block-start: 10px;
+  }
+
+  .main__content-section {
+    display: grid;
+    grid-template-columns: clamp(14.75rem, -0.0625rem + 30.8594vw, 19.6875rem) 1fr;
+    column-gap: 20px;
+  }
+
+  .section__theme-menu-list {
+    display: grid;
+    row-gap: 20px;
+  }
+
+  .main__concentration-content-section {
+    row-gap: 20px;
+  }
+
+  h3 {
+    margin-block-start: 0;
+  }
+
+  .subtitle {
+    margin-block-end: 20px;
+  }
+
+  h4 {
+    margin-block-start: 0;
+  }
+
+  .section__theme-menu-list {
+    grid-column: 2 / 3;
+  }
+
+  .section__theme-menu-list-concentration {
+    grid-column: 1 / 3;
+  }
+
+  .pictures-list {
+    margin-block-end: 80px;
+    display: grid;
+    gap: 20px;
+  }
+  .sunset__pictures {
+    grid-column: 1 / 3;
+    grid-row: 1 / 2;
+  }
+
+  .ice-cream__pictures {
+    grid-column: 3 / 4;
+    grid-row: 1 / 3;
+  }
+
+  .tape__pictures {
+    grid-column: 1 / 2;
+    grid-row: 2 / 4;
+  }
+
+  .street__pictures {
+    grid-column: 2 / 4;
+  }
+}
+
+@media (width >= 1024px) {
+  .main {
+    row-gap: 40px;
+    padding-block-start: 10px;
+  }
+
+  .header__theme-menu {
+    row-gap: 59px;
+  }
+
+  .header__theme-menu-list {
+    padding: 0;
+    justify-self: center;
+    align-self: start;
+    grid-auto-flow: column;
+    column-gap: 25px;
+  }
+
+  .header-title {
+    font-size: clamp(7.5rem, 0.5625rem + 14.4531vw, 9.8125rem);
+    align-self: center;
+  }
+
+  .header-text {
+    max-width: 491px;
+  }
+
+  .main__concentration-content-section {
+    padding-block-start: 6px;
+  }
+
+  .section__theme-menu-list-concentration {
+    grid-auto-flow: column;
+    column-gap: 20px;
+  }
+
+  .decorations {
+    font-size: clamp(7.5rem, 0.5625rem + 14.4531vw, 9.8125rem);
+  }
 }
