@@ -1,13 +1,10 @@
-/* Основные стили проекта. Это стили для темы, которую вы верстаете первой. */
-
 .page {
-  /* сохраните в разметке и стилях класс page. На его основе работает скрипт. */
   padding: 10px;
   color: var(--main-text);
   background-color: var(--background-color, #000028);
   background-image: var(
     --background-image,
-    url("/images/cover-image-dark.png")
+    url("../images/cover-image-dark.png")
   );
   background-repeat: no-repeat;
   background-position: center;
@@ -18,8 +15,11 @@
 
 /* НАЧАЛО - header */
 .header {
-  block-size: max(100vb, 668px);
+  position: relative;
+  display: grid;
+  block-size: max(100vb);
   margin-block-end: 30px;
+  padding-block-end: 75px;
 }
 
 .decorated-zone::before,
@@ -33,15 +33,15 @@
 .decorated-zone::before {
   border-inline-end: 1px solid var(--main-text, #ff0070);
   border-block-start: 1px solid var(--main-text, #ff0070);
-  inset-inline-end: 10px;
-  inset-block-start: 10px;
+  top: 0px;
+  right: 0px;
 }
 
 .decorated-zone::after {
   border-block-end: 1px solid var(--main-text, #ff0070);
   border-inline-start: 1px solid var(--main-text, #ff0070);
-  inset-block-end: 10px;
-  inset-inline-start: 10px;
+  bottom: 20px;
+  left: 0px;
 }
 
 /* НАЧАЛО - Элемент REC */
@@ -52,8 +52,9 @@
   align-items: center;
   gap: 10px;
   text-transform: uppercase;
-  inset-inline-end: 20px;
-  inset-block-start: 11px;
+
+  inset-inline-end: 10px;
+  inset-block-start: 2px;
 }
 
 .header-rec::before {
@@ -100,7 +101,7 @@
 }
 
 .header__theme-menu-button_active {
-  outline: 1px solid var(--main-text, #ff0070);
+  outline: 1px solid var(--button-active, #ff0070);
   pointer-events: none;
 }
 
@@ -125,6 +126,7 @@
 }
 
 .header-text {
+  max-height: 117px;
   justify-self: end;
   margin-block-start: 55px;
   max-inline-size: 375px;
@@ -143,17 +145,20 @@
 }
 
 .main__concentration-content-section,
-.main__advice-content-section,
 .pictures-content-section {
   margin-block-start: 30px;
+}
+
+.main__advice-content-section {
+  margin-block-start: 10px;
 }
 
 .subtitle {
   margin-block-end: 10px;
 }
 
-h2 {
-  font-family: var(--main-font, "IBM Plex Mono");
+.heading {
+  font-family: var(--main-font, "IBM Plex Mono"), sans-serif;
   font-size: 18px;
   font-weight: 700;
   line-height: 23.4px;
@@ -161,23 +166,27 @@ h2 {
   color: var(--title-text, #ff0070);
 }
 
-h3 {
+.headline {
   margin-block-start: 20px;
   margin-block-end: 10px;
 }
 
-h4 {
+.heading-advice {
   margin-block-start: 20px;
   margin-block-end: 10px;
 }
 
-p {
-  font-family: var(--main-font, "IBM Plex Mono");
+.content {
+  font-family: var(--main-font, "IBM Plex Mono"), sans-serif;
   font-size: 18px;
   font-weight: 400;
   line-height: 23.4px;
   text-align: left;
   color: var(--second-text, #f1b2ce);
+}
+
+.pictures-content-section {
+  margin-block-start: 10px;
 }
 
 .pictures-list {
@@ -196,37 +205,14 @@ p {
 }
 
 .footer {
+  position: relative;
   display: grid;
-  grid-template-rows: auto 1fr auto;
-  padding-block-end: 30px;
-  block-size: max(100vb, 668px);
+  block-size: max(100vb);
+  margin-block-start: -9px;
+  padding-block-end: 20px;
 }
 
-.footer::before {
-  content: "";
-  display: block;
-  justify-self: end;
-  border-inline-end: 1px solid var(--main-text);
-  border-block-start: 1px solid var(--main-text);
-  block-size: 25px;
-  inline-size: 25px;
-  inset-inline-end: 0px;
-  inset-block-start: var(--general-padding, 10px);
-  margin-block-start: -7px;
-}
-
-.footer::after {
-  content: "";
-  display: block;
-  border-inline-start: 1px solid var(--main-text);
-  border-block-end: 1px solid var(--main-text);
-  block-size: 25px;
-  inline-size: 25px;
-  inset-inline-start: 0px;
-  inset-block-end: var(--main-padding, 10px);
-}
-
-.decorations {
+.footer-title {
   justify-self: center;
   align-self: center;
   font-family: var(--main-font), sans-serif;
@@ -242,13 +228,16 @@ p {
   outline: 1px solid var(--hover-border-color);
 }
 
-a .header__theme-menu-button:focus,
-:focus-visible {
+.header__theme-menu-button:focus {
   outline: none;
 }
 
 .header__theme-menu-button:focus-visible {
-  border-bottom: 1px solid var(--main-text);
+  border-bottom: 1px solid var(--focus-visable-color, #ff0070);
+}
+
+.link:focus {
+  outline: none;
 }
 
 .link {
@@ -267,21 +256,30 @@ a .header__theme-menu-button:focus,
 
 @media (width >= 768px) {
   .page {
-    padding: 20px;
+    padding: 0px;
+  }
+
+  .header {
+    padding: 20px 20px 20px 0;
+    margin-block-end: 50px;
   }
 
   .header__theme-menu {
     display: grid;
-    height: 100vh;
   }
 
   .header__theme-menu-list {
     align-self: center;
-    padding-block-start: 80px;
+    padding-block-start: 94px;
+  }
+
+  .header-title {
+    padding-block-start: 30px;
   }
 
   .header-text {
     align-self: start;
+    padding-inline-start: 10px;
     margin-block-start: 0;
   }
 
@@ -301,6 +299,7 @@ a .header__theme-menu-button:focus,
   }
 
   .main {
+    padding: 20px;
     display: grid;
     row-gap: 50px;
     padding-block-start: 10px;
@@ -312,7 +311,7 @@ a .header__theme-menu-button:focus,
     column-gap: 20px;
   }
 
-  .section__theme-menu-list {
+  .section__list {
     display: grid;
     row-gap: 20px;
   }
@@ -321,7 +320,7 @@ a .header__theme-menu-button:focus,
     row-gap: 20px;
   }
 
-  h3 {
+  .headline {
     margin-block-start: 0;
   }
 
@@ -329,12 +328,20 @@ a .header__theme-menu-button:focus,
     margin-block-end: 20px;
   }
 
-  h4 {
+  .main__advice-content-section {
+    margin-block-start: 30px;
+  }
+
+  .heading-advice {
     margin-block-start: 0;
   }
 
-  .section__theme-menu-list-concentration {
+  .section__list-concentration {
     grid-column: 1 / 3;
+  }
+
+  .pictures-content-section {
+    margin-block-start: 30px;
   }
 
   .pictures-list {
@@ -342,23 +349,27 @@ a .header__theme-menu-button:focus,
     display: grid;
     gap: 20px;
   }
-  .sunset__pictures {
+
+  .picture-list__item:nth-child(1) {
     grid-column: 1 / 3;
     grid-row: 1 / 2;
   }
 
-  .ice-cream__pictures {
+  .picture-list__item:nth-child(2) {
     grid-column: 3 / 4;
     grid-row: 1 / 3;
   }
-
-  .tape__pictures {
+  .picture-list__item:nth-child(3) {
     grid-column: 1 / 2;
     grid-row: 2 / 4;
   }
-
-  .street__pictures {
+  .picture-list__item:nth-child(5) {
     grid-column: 2 / 4;
+  }
+
+  .footer {
+    margin-block-start: -42px;
+    padding-block-end: 0px;
   }
 }
 
@@ -373,7 +384,7 @@ a .header__theme-menu-button:focus,
   }
 
   .header__theme-menu-list {
-    padding: 0;
+    padding: 0px 0px 0px 20px;
     justify-self: center;
     align-self: start;
     grid-auto-flow: column;
@@ -383,22 +394,28 @@ a .header__theme-menu-button:focus,
   .header-title {
     font-size: clamp(7.5rem, 0.5625rem + 14.4531vw, 9.8125rem);
     align-self: center;
+    padding-block-start: 125px;
   }
 
   .header-text {
     max-width: 491px;
+    padding: 0px;
+    margin-block-start: 73px;
   }
 
-  .main__concentration-content-section {
-    padding-block-start: 6px;
+  .main__concentration-content-section,
+  .main__advice-content-section,
+  .pictures-content-section {
+    padding-block-start: 10px;
   }
 
-  .section__theme-menu-list-concentration {
+  .section__list-concentration {
+    grid-template-columns: repeat(auto-fill, 315px);
     grid-auto-flow: column;
     column-gap: 20px;
   }
 
-  .decorations {
+  .footer-title {
     font-size: clamp(7.5rem, 0.5625rem + 14.4531vw, 9.8125rem);
   }
 }

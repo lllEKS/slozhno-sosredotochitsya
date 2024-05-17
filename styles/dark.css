@@ -3,16 +3,18 @@
   здесь окажутся стили, которые нужно переопределить принудительно,
   переключая тему
 */
-@media (prefers-color-scheme: dark) {
+@media (color-scheme: dark) {
   :root {
     --background-color: #000028;
     --accent-color: #000028;
     --main-text: #ff0070;
     --second-text: #f1b2ce;
     --title-color: #db00ff;
-    --title-text: #FF0070;
+    --title-text: #ff0070;
+    --focus-visable-color: #ff0070;
+    --button-active: #ff0070;
     --hover-border-color: rgba(255, 0, 112, 0.4);
-    --background-image: url("/images/cover-image-dark.png");
+    --background-image: url("../images/cover-image-dark.png");
     --rec-decor-visibility: visible;
   }
 }
@@ -26,8 +28,10 @@
   --main-text: #ff0070;
   --second-text: #f1b2ce;
   --title-color: #db00ff;
-  --title-text: #FF0070;
+  --title-text: #ff0070;
+  --focus-visable-color: #ff0070;
+  --button-active: #ff0070;
   --hover-border-color: rgba(255, 0, 112, 0.4);
   --rec-decor-visibility: visible;
-  --background-image: url("/images/cover-image-dark.png");
+  --background-image: url("../images/cover-image-dark.png");
 }

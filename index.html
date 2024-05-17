@@ -6,13 +6,14 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <meta name="color-scheme" content="dark light" />
     <link rel="stylesheet" href="./fonts/fonts.css" />
-    <link rel="stylesheet" href="./styles/globals.css" />
     <link rel="stylesheet" href="./styles/variables.css" />
+    <link rel="stylesheet" href="./styles/globals.css" />
     <link rel="stylesheet" href="./styles/style.css" />
     <link rel="stylesheet" href="./styles/dark.css" />
     <link rel="stylesheet" href="./styles/light.css" />
-    <link rel="icon" href="./images/favicon.ico" />
-    <link rel="icon" href="./images/favicon.svg" type="image/svg+xml" />
+    <link rel="icon" href="../images/favicon.ico" />
+    <link rel="icon" href="../images/favicon.svg" type="image/svg+xml" />
+    <link rel="apple-touch-icon" href="../images/favicon.svg" />
     <title>Сложно сосредоточиться</title>
   </head>
   <body class="page">
@@ -43,21 +44,20 @@
             </button>
           </li>
         </ul>
-        <h1 class="header-title">no focus</h1>
-        <p class="header-text title-decor">
-          Что делать, когда не можешь делать ничего<br />
-          Или почему нам так сложно сконцентрироваться, особенно когда очень
-          надо
-        </p>
       </nav>
+      <h1 class="header-title">no focus</h1>
+      <p class="header-text title-decor">
+        Что делать, когда не можешь делать ничего<br />
+        Или почему нам так сложно сконцентрироваться, особенно когда очень надо
+      </p>
     </header>
     <main class="main">
       <section class="main__content-section main__why-content-section">
-        <h2 class="heading heading-why">Почему сосредоточиться так сложно</h2>
-        <ul class="section__theme-menu-list why__section__theme-menu-list">
-          <li class="section__theme-menu-item">
-            <h3 class="heading title-decor">Многозадачность</h3>
-            <p>
+        <h2 class="heading">Почему сосредоточиться так сложно</h2>
+        <ul class="section__list why__section-list">
+          <li class="section__item">
+            <h3 class="headline title-decor">Многозадачность</h3>
+            <p class="content">
               Особенно сложно сосредоточиться, когда задач много и все они —
               важные. Где же легендарная многозадачность, когда она так нужна
               вам (и всем нанимающим менеджерам этого мира)? А дело в том, что
@@ -77,9 +77,9 @@
               ошибаемся и быстро устаём.
             </p>
           </li>
-          <li class="section__theme-menu-item">
-            <h3 class="heading title-decor">Дофамин</h3>
-            <p>
+          <li class="section__item">
+            <h3 class="headline title-decor">Дофамин</h3>
+            <p class="content">
               С гормонами стресса всё понятно, но дальше — ещё интереснее. В
               нашей невозможности сосредоточиться замешана и полная
               противоположность стрессу — дофамин. Это вещество участвует в
@@ -98,12 +98,10 @@
         <h2 class="heading heading-concentration">
           Что снижает концентрацию внимания?
         </h2>
-        <ul
-          class="section__theme-menu-list section__theme-menu-list-concentration"
-        >
-          <li class="section__theme-menu-item">
-            <h3 class="heading title-decor">Многозадачность</h3>
-            <p>
+        <ul class="section__list section__list-concentration">
+          <li class="section__item">
+            <h3 class="headline title-decor">Многозадачность</h3>
+            <p class="content">
               Как концентрация может снижаться из-за… концентрации? Любая
               стрессовая ситуация (и резко меняющийся мир в целом) заставляет
               наш мозг постоянно «сканировать» окружающую среду на предмет
@@ -112,9 +110,9 @@
               может не выдержать, если не давать ей отдохнуть.
             </p>
           </li>
-          <li class="section__theme-menu-item">
-            <h3 class="heading title-decor">Еда</h3>
-            <p>
+          <li class="section__item">
+            <h3 class="headline title-decor">Еда</h3>
+            <p class="content">
               «Быстрые углеводы» — сахар, белый хлеб, сладости — молниеносно
               доставляют в мозг энергию и помогают ему лучше работать. Но уходит
               эта энергия также быстро, как и приходит. А мы в результате
@@ -123,9 +121,9 @@
               хотим ещё больше быстрых углеводов.
             </p>
           </li>
-          <li class="section__theme-menu-item">
-            <h3 class="heading title-decor">Гаджеты</h3>
-            <p>
+          <li class="section__item">
+            <h3 class="headline title-decor">Гаджеты</h3>
+            <p class="content">
               Да-да, это та самая ситуация, когда на экране ноутбука — код, в
               наушниках — подкаст, а на компьютере фоном — ещё и видео с
               забавными утятами. В результате мозг пытается переключиться с
@@ -143,13 +141,15 @@
           секунд)
         </h2>
         <div class="grid__column">
-          <h3 class="heading title-decor subtitle">
+          <h3 class="headline title-decor subtitle">
             5 простых (на самом деле не очень) советов
           </h3>
-          <ul class="section__theme-menu-list">
-            <li class="section__theme-menu-item">
-              <h4 class="heading title-decor">Представьте небо и облака</h4>
-              <p>
+          <ul class="section__list">
+            <li class="section__item">
+              <h4 class="heading-advice title-decor">
+                Представьте небо и облака
+              </h4>
+              <p class="content">
                 Или листья в ручье. Тут дело в лёгкой медитации, которая
                 помогает успокоиться. Ведь часто именно тревожные мысли о
                 сложных задачах как раз и мешают эти сложные задачи делать. В
@@ -160,18 +160,18 @@
                 не волноваться о потенциальных проблемах из будущего.
               </p>
             </li>
-            <li class="section__theme-menu-item">
-              <h4 class="heading title-decor">Включите музыку</h4>
-              <p>
+            <li class="section__item">
+              <h4 class="heading-advice title-decor">Включите музыку</h4>
+              <p class="content">
                 Но не любую, и не любимую. Любимая может быть связана с сильными
                 положительными эмоциями, которые тоже очень сильно отвлекают.
                 Подойдёт тихая, спокойная, умеренно-ритмичная. Можно вообще
                 попробовать включить плейлист в «белым шумом» или нейромузыкой.
               </p>
             </li>
-            <li class="section__theme-menu-item">
-              <h4 class="heading title-decor">Прогуляйтесь</h4>
-              <p>
+            <li class="section__item">
+              <h4 class="heading-advice title-decor">Прогуляйтесь</h4>
+              <p class="content">
                 Или даже пробегитесь. Лучше найти парк или лес: один эксперимент
                 <a
                   href="https://www.sciencedirect.com/science/article/abs/pii/S0272494415000328"
@@ -187,9 +187,9 @@
                 вариант.
               </p>
             </li>
-            <li class="section__theme-menu-item">
-              <h4 class="heading title-decor">Хорошо ешьте</h4>
-              <p>
+            <li class="section__item">
+              <h4 class="heading-advice title-decor">Хорошо ешьте</h4>
+              <p class="content">
                 Мы — не ваша бабушка, но это правда важно. Выбирайте продукты,
                 которые препятствуют резким скачкам сахара в крови. Например, с
                 высоким содержанием клетчатки: овощи, ягоды, бобовые (нут,
@@ -197,9 +197,9 @@
                 пшеницы.
               </p>
             </li>
-            <li class="section__theme-menu-item">
-              <h4 class="heading title-decor">Читайте</h4>
-              <p>
+            <li class="section__item">
+              <h4 class="heading-advice title-decor">Читайте</h4>
+              <p class="content">
                 Настоящие бумажные книги. Это правда помогает с концентрацией:
                 чтобы прочитать пост в соцсети, достаточно нескольких минут или
                 даже секунд. А вот интересная книга способна затянуть и на
@@ -210,11 +210,11 @@
         </div>
       </section>
       <section class="pictures-content-section">
-        <h2 class="heading heading-pictures title-decor">
+        <h2 class="headline heading-pictures title-decor">
           А можно в картинках?
         </h2>
         <ul class="pictures-list">
-          <li class="picture-list__item sunset__pictures">
+          <li class="picture-list__item">
             <img
               class="picture-list__img"
               src="./images/sunset.png"
@@ -222,7 +222,7 @@
               loading="lazy"
             />
           </li>
-          <li class="picture-list__item ice-cream__pictures">
+          <li class="picture-list__item">
             <img
               class="picture-list__img"
               src="./images/ice-cream.png"
@@ -230,7 +230,7 @@
               loading="lazy"
             />
           </li>
-          <li class="picture-list__item tape__pictures">
+          <li class="picture-list__item">
             <img
               class="picture-list__img"
               src="./images/tape.png"
@@ -238,7 +238,7 @@
               loading="lazy"
             />
           </li>
-          <li class="picture-list__item book__pictures">
+          <li class="picture-list__item">
             <img
               class="picture-list__img"
               src="./images/books.png"
@@ -246,7 +246,7 @@
               loading="lazy"
             />
           </li>
-          <li class="picture-list__item street__pictures">
+          <li class="picture-list__item">
             <img
               class="picture-list__img"
               src="./images/street.png"
@@ -257,8 +257,8 @@
         </ul>
       </section>
     </main>
-    <footer class="footer">
-      <p class="decorations">focus</p>
+    <footer class="footer decorated-zone">
+      <h2 class="footer-title">focus</h2>
     </footer>
     <script src="./scripts/script.js"></script>
   </body>
