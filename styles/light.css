@@ -13,6 +13,7 @@
     --title-text: #353430;
     --focus-visable-color: #353430;
     --button-active: #353430;
+    --color-decorated-zone: #353430;
     --hover-border-color: rgba(50, 49, 45, 0.4);
     --background-image: url("../images/cover-image-light.png");
     --rec-decor-visibility: hidden;
@@ -32,6 +33,7 @@
   --title-text: #353430;
   --focus-visable-color: #353430;
   --button-active: #353430;
+  --color-decorated-zone: #353430;
   --hover-border-color: rgba(50, 49, 45, 0.4);
   --background-image: url("../images/cover-image-light.png");
   --rec-decor-visibility: hidden;

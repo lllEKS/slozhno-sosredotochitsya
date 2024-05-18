@@ -17,7 +17,7 @@
 .header {
   position: relative;
   display: grid;
-  block-size: max(100vb);
+  block-size: max(100vb, 668px);
   margin-block-end: 30px;
   padding-block-end: 75px;
 }
@@ -31,15 +31,15 @@
 }
 
 .decorated-zone::before {
-  border-inline-end: 1px solid var(--main-text, #ff0070);
-  border-block-start: 1px solid var(--main-text, #ff0070);
+  border-inline-end: 1px solid var(--color-decorated-zone, #ff0070);
+  border-block-start: 1px solid var(--color-decorated-zone, #ff0070);
   top: 0px;
   right: 0px;
 }
 
 .decorated-zone::after {
-  border-block-end: 1px solid var(--main-text, #ff0070);
-  border-inline-start: 1px solid var(--main-text, #ff0070);
+  border-block-end: 1px solid var(--color-decorated-zone, #ff0070);
+  border-inline-start: 1px solid var(--color-decorated-zone, #ff0070);
   bottom: 20px;
   left: 0px;
 }
@@ -52,7 +52,6 @@
   align-items: center;
   gap: 10px;
   text-transform: uppercase;
-
   inset-inline-end: 10px;
   inset-block-start: 2px;
 }
@@ -87,6 +86,7 @@
   padding-block-start: 66px;
   padding-block-end: 71px;
   padding-inline-end: 7px;
+  color: var(--color-decorated-zone, #ff0070);
 }
 
 .header__theme-menu-button {
@@ -126,7 +126,6 @@
 }
 
 .header-text {
-  max-height: 117px;
   justify-self: end;
   margin-block-start: 55px;
   max-inline-size: 375px;
@@ -207,7 +206,7 @@
 .footer {
   position: relative;
   display: grid;
-  block-size: max(100vb);
+  block-size: max(100vb, 668px);
   margin-block-start: -9px;
   padding-block-end: 20px;
 }
@@ -410,8 +409,7 @@
   }
 
   .section__list-concentration {
-    grid-template-columns: repeat(auto-fill, 315px);
-    grid-auto-flow: column;
+    grid-template-columns: repeat(3, 1fr);
     column-gap: 20px;
   }
 
